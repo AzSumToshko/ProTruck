@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Details";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+@model ProTruck.ViewModel.DetailsModel
+
+
+<!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <h1 style = "color:green" class="display-3 mb-3 animated slideInDown">Details</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a class="text-body" href="/Home/Index">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-body" href="/Home/Catalogue">Catalogue</a></li>
+                    <li style = "color:green" class="breadcrumb-item active" aria-current="page">Details</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+<!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                        <img class="img-fluid w-100" src="@Url.Action("GetImage", "Home",new { id =  Model.item.id})">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="display-5 mb-4">@Model.item.brand @Model.item.model</h1>
+                    <p class="mb-4">@Model.item.description</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- About End -->

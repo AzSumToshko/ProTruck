@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Register";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+@model ProTruck.ViewModel.RegisterModel
+
+<!-- Page Header Start -->
+    <div class="container-fluid page-header wow fadeIn mb-5" data-wow-delay="0.1s">
+        <div class="container">
+            <h1 style = "color:green" class="display-3 mb-3 animated slideInDown">Register</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a class="text-body" href="/Home/Index">Home</a></li>
+                    <li style = "color:green" class="breadcrumb-item active" aria-current="/Home/Register">Register</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <center><form action="/Home/Register" method="post">
+        <div class="col-lg-6">
+                    <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                        <h1 class="display-5 mb-3">Registration form</h1>
+                        <p>By registering your going to obtain an account on our site which is a big plus for you.</p>
+                    </div>
+                </div>
+                            <div class="col-12 mb-3">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="model.username" name = "model.username" placeholder="Username">
+                                    <label for="subject">Username</label>
+                                    @Html.ValidationMessageFor(model => model.username)
+                                </div>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" id="model.password" name = "model.password" placeholder="Password">
+                                    <label for="subject">Password</label>
+                                    @Html.ValidationMessageFor(model => model.password)
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Register</button>
+                            </div>
+</form></center>
